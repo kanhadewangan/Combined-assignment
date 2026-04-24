@@ -51,7 +51,7 @@ describe('Project Operations', () => {
 
         expect(project).toHaveProperty('id');
         expect(project.title).toBe('Build App');
-        expect(project.user_id).toBe(userId);
+        expect(project.userId).toBe(userId);
     });
 
     test('getProjects retrieves all projects for user', async () => {
@@ -59,7 +59,7 @@ describe('Project Operations', () => {
 
         expect(projects.length).toBeGreaterThan(0);
         projects.forEach(p => {
-            expect(p.user_id).toBe(userId);
+            expect(p.userId).toBe(userId);
         });
     });
 });
@@ -103,7 +103,7 @@ describe('Task Operations', () => {
 
         expect(tasks.length).toBeGreaterThan(0);
         tasks.forEach(t => {
-            expect(t.project_id).toBe(projectId);
+            expect(t.projectId).toBe(projectId);
         });
     });
 });
