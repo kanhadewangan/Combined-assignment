@@ -14,6 +14,12 @@ export async function createUser(
     password: string,
     name: string
   ) {
+    const res = await client.query(` insert into users (username, password, name) values ($1, $2 , $3)`, [
+      username,
+      password,
+      name
+    ]);
+    return { username, password, name };
  
   }
 /*
@@ -27,6 +33,8 @@ export async function createUser(
 
 
 export async function getUser(userId: number) {
+  const res = await client.query(` select * from users where id = $1`, [userId]);
+  return res.rows[0];
 
 }
 

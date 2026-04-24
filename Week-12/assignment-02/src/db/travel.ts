@@ -34,6 +34,18 @@ export async function createTravelPlan(
   endDate: string,
   budget: number
 ) {
+  const res = await client.query( 
+    `insert into travel_plans (user_id , title,destination_city, destination_country, start_date, end_date, budget) values ($1, $2, $3, $4, $5, $6, $7) returning *`,[
+      userId,
+      title,
+      destinationCity,
+      destinationCountry,
+      startDate,
+      endDate,
+      budget
+    ]
+  )
+  return res.rows[0];
 
 }
 
@@ -46,8 +58,17 @@ export async function updateTravelPlan(
   title?: string,
   budget?: number
 ) {
-
+  const res = await client.query(
+    `update travel_plans set title = COALESCE($1, title), budget = COALESCE($2, budget) where id = $3 returning *`,[
+      title,
+      budget,
+      planId
+    ]
+  )
+  return res.rows[0];
 }
+
+
 
 /*
  * Function should get all the travel plans of a given user
@@ -63,5 +84,9 @@ export async function updateTravelPlan(
  * }]
  */
 export async function getTravelPlans(userId: number) {
+  const res = await client.query(
+    `select * from travel_plans where user_id = $1`, [userId]
+  )
+  return res.rows;
 
 }
