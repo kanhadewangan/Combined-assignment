@@ -26,3 +26,23 @@
 
 
 
+interface Product {
+    name: string;
+    price: number;
+}
+
+interface DigitalProduct {
+    downloadLink: string;
+
+}
+
+type FullProduct = Product & DigitalProduct;
+
+const fullProduct: FullProduct = {
+    name: "E-book",
+    price: 10,
+    downloadLink: "https://example.com/ebook",
+};
+
+console.log(fullProduct);
+

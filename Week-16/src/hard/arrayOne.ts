@@ -11,3 +11,15 @@
 // Example Output 3: Throws an error: "Array cannot be empty"
 
 
+
+export function isMinimum(nums:number[]):number{
+    if(nums.length === 0) {
+        throw new Error("Array cannot be empty");
+    }
+    return Math.min(...nums);
+}
+
+
+
+console.log(isMinimum([10, 2, 8, 6]));
+console.log(isMinimum([7]));

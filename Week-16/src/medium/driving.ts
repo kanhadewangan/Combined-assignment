@@ -6,3 +6,14 @@
 // Example Output:
 // true
 
+
+
+
+
+function isEligibleForDriving(user: { name: string; age: number }): boolean {
+    return user.age >= 16;
+}
+
+
+const users = { name: "Alice", age: 20 };
+console.log(isEligibleForDriving(users));

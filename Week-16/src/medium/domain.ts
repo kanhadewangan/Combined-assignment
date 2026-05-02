@@ -14,3 +14,25 @@
 // Example Output:
 // true
 
+
+
+interface User {
+    firstName: string;
+    lastName: string;
+    email: string;
+    age: number;
+}
+
+function isAllowedDomain(user: User, allowedDomain: string): boolean {
+    return user.email.endsWith(allowedDomain);
+}
+
+const user: User = {
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.doe@example.com",
+    age: 25
+};
+
+const allowedDomain = "@example.com";
+console.log(isAllowedDomain(user, allowedDomain));

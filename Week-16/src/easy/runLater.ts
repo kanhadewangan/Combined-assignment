@@ -3,3 +3,10 @@
 // Example Input: runLater(() => console.log("Hello!"), 2000)
 // Example Output: Prints "Hello!" after 2 seconds.
 
+
+
+export function runLater(func: () => void, time: number): void {
+     setTimeout(func, time);
+     
+}
+

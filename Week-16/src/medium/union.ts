@@ -18,3 +18,26 @@
 // 78.53981633974483
 
 
+
+interface Circle {
+    radius: number;
+}
+interface Rectangle {
+    width: number;
+    height: number;
+}
+
+
+type shape = Circle | Rectangle;
+
+ // Todo think for test cases for both circle and rectangle
+ export function getArea(s: shape): number {
+   
+    if('radius' in s) {
+        return Math.PI * s.radius * s.radius;
+    }
+    else {
+        return s.width * s.height;
+    }
+  
+}

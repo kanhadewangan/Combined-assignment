@@ -19,3 +19,18 @@
 //     { name: "Charlie", age: 22, country: "India" }
 //   ]
 
+
+export function filterByCountry(users: { name: string; age: number; country: string }[], country: string): { name: string; age: number; country: string }[] {
+    const filteredUser = users.filter(user => user.country === country);
+    return filteredUser;
+}
+
+
+const users = [
+    { name: "Alice", age: 25, country: "India" },
+    { name: "Bob", age: 30, country: "USA" },
+    { name: "Charlie", age: 22, country: "India" },
+    { name: "David", age: 28, country: "Canada" }
+];
+const country = "India";
+console.log(filterByCountry(users, country));
