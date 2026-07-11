@@ -1,4 +1,4 @@
-# Week 14: Next.js Basic Assignment
+# Week 26: Next.js Basic Assignment
 
 This week's assignment is designed to help you learn and practice key concepts of Next.js 14, including file-based routing with the App Router, navigation, layout components, static rendering, and client-side rendering with the `"use client"` directive.
 
